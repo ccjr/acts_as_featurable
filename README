@@ -1,0 +1,61 @@
+ActsAsFeaturable
+====================
+
+This is a plugin that assumes you want to "feature" a specific type of object for a pre-defined amount of time.
+
+You can easily manage featured objects in a admin UI by scaffolding the featured_period object. Of course, you can add methods to your controllers to manage featured periods in a easier/smarter way.
+
+How to use:
+-----------
+
+* Create a migration to create the table to hold the featured periods.
+ This table holds the information about when and for how long objects are featured in you application.
+
+  def self.up
+    create_table "featured_periods", :force => true do |t|
+      t.column "featurable_id", :integer
+      t.column "featurable_type", :string
+      t.column "starts_at", :datetime, :null => false
+      t.column "expires_at", :datetime, :null => false
+      t.column "created_at", :datetime, :null => false
+      t.column "updated_at", :datetime, :null => false
+    end
+  end
+
+  def self.down
+    drop_table :featured_periods
+  end
+
+== Usage
+
+ * Make your ActiveRecord model act as featurable.
+
+  class Video < ActiveRecord::Base
+ 	  acts_as_featurable
+  end
+
+ * Feature a specific model object
+
+  Call the feature! method to feature an object.
+
+  v = Video.find :first
+  v.feature!
+  v.featured? => true
+
+  Call the unfeature! method to unfeature an object.
+
+  v.unfeature!
+  v.featured? => false
+
+  Models are featured for 1 month by default, but you can pass arguments to the feature! method to change the default behavior.
+
+  v.feature! 3.weeks.from_now
+  v.featured? => true
+
+  The Video class also gets a new method called find_featured that you can use to find the featured objects.
+
+  Video.find_featured :first => # Video id: 18, title: "Skyview Tower" ..
+
+== Credits
+
+This plugin is heavily influenced by all Acts As * plugins.

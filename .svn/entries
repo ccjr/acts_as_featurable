@@ -1,0 +1,40 @@
+9
+
+dir
+1588
+svn+ssh://scm.spinbits.com/apps/restate/trunk/vendor/plugins/acts_as_featurable/test
+svn+ssh://scm.spinbits.com/apps/restate
+
+
+
+2007-07-29T12:46:44.984500Z
+1248
+junior
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+61b4deaa-820f-db11-b47e-000b6ad94f17
+
+acts_as_commentable_test.rb
+file
+
+
+
+
+2008-07-02T11:13:14.000000Z
+4c536b3236347c87d62fd25a14fe4108
+2007-07-29T12:46:44.984500Z
+1248
+junior
+
