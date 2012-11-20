@@ -6,11 +6,11 @@ require 'acts_as_featurable/version'
 Gem::Specification.new do |gem|
   gem.name          = "acts_as_featurable"
   gem.version       = ActsAsFeaturable::VERSION
-  gem.authors       = ["Blaine Pace"]
-  gem.email         = ["blainepace@gmail.com"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
-  gem.homepage      = ""
+  gem.authors       = ["Cloves Carneiro"]
+  gem.email         = ["ccarneiroj@gmail.com"]
+  gem.description   = %q{Feature a specific object for a pre-defined amount of time.}
+  gem.summary       = %q{You can easily manage featured objects in a admin UI by saffolding the featured_period object.}
+  gem.homepage      = "https://github.com/ccjr/acts_as_featurable"
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
